@@ -14,8 +14,8 @@ const display_hit = {
 };
 
 let dvd = {
-    x: (Math.random() * 615),
-    y: (Math.random() * 425),
+    x: (Math.random() * 575),
+    y: (Math.random() * 350),
     xspeed: 10,
     yspeed: 10,
     img: new Image()
