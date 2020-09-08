@@ -80,8 +80,8 @@ function hitEvent(){
     //Capture hitting time
     var currentHit = Date.now();
     display_hit.total.innerText = counter_desc[0] + (++hitCount[0]);
-    //Count as hit corner when hit 2 in 1 ms or less
-    if ((currentHit - lastHit)<=1) {
+    //Count as hit corner when hit 2 in 5 ms or less
+    if ((currentHit - lastHit)<=5) {
         display_hit.corner.innerText = counter_desc[1] + (++hitCount[1]);
     }
     //Calculate avarage chance
