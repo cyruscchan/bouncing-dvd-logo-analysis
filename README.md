@@ -1,6 +1,8 @@
-# bouncing-dvd-logo
+# bouncing-dvd-logo－analysis
 
-Will it hit the corner?
+<del>Will it hit the corner?</del>
+
+So, I want to know the chance of this happened
 
 __Preview__ : 
 
