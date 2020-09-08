@@ -77,15 +77,18 @@ function checkHitBox(){
 
 //Pick a random color in RGB format
 function hitEvent(){
+    var corner = false;
     //Capture hitting time
     var currentHit = Date.now();
     display_hit.total.innerText = counter_desc[0] + (++hitCount[0]);
     //Count as hit corner when hit 2 in 5 ms or less
     if ((currentHit - lastHit)<=5) {
         display_hit.corner.innerText = counter_desc[1] + (++hitCount[1]);
+        corner = true;
     }
     //Calculate avarage chance
     display_hit.avg.innerText = counter_desc[2] + parseFloat(hitCount[1]/hitCount[0]).toFixed(10);
+    console.log({msg:"Hit!",isCorner:corner,timeUsed:((currentHit-lastHit)/1000)+'s'});
     lastHit = currentHit;
     r = Math.random() * (254 - 0) + 30;
     g = Math.random() * (254 - 0) + 30;
