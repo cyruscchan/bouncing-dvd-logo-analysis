@@ -4,8 +4,6 @@
 
 So, I want to know the chance of this happened
 
-__Preview__ : 
-
-![preview](https://i.imgur.com/sgYsqnc.gif)
+[Click me to view](https://cyruscchan.github.io/bouncing-dvd-logo-analysis/)
 
 
