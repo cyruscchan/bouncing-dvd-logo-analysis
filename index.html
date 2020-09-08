@@ -2,12 +2,25 @@
     <head>
         <title>Bouncing DVD Logo</title>
         <style>
-            * {margin:0; padding: 0; color:red;}
+            div, body, canvas {margin:0; padding: 0;}
+            div.centralize {width: 100%; height: 100%; text-align: center; position: relative;}
+            canvas {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+            div.counter {position: fixed; z-index: 1; background-color: gray; width: 100%; height: 30px; bottom: 0; left: 0; text-align: center; display: inline-block;}
+            div.counter > div.string_container {width: 100%; top: 100%;}
+            div.counter > div.string_container p {margin: 5px 0; display: inline-block; padding: 0 10px; border: 1px solid black;}
         </style>
     </head>
-
     <body>
-        <canvas id="tv-screen"></canvas>
+        <div class="centralize">
+            <canvas id="tv-screen"></canvas>
+        </div>
+        <div class="counter">
+            <div class="string_container">
+                <p id="total_count_msg"></p>
+                <p id="count_msg"></p>
+                <p id="avg_msg"></p>
+            </div>
+        </div>
         <script src="js/app.js"></script>
     </body>
 </html>
