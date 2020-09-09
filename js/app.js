@@ -3,7 +3,7 @@ let scale = 0.05; // Image scale (I work on 1080p monitor)
 let canvas;
 let ctx;
 let logoColor;
-var lastHit = Date.now(); //UNIX time of the last hit
+var lastHit = Date.now()-1000; //UNIX time of the last hit
 //[0] = total hit, [1] = corner hit, [2] = Average
 var hitCount = [0,0];
 const counter_desc = ["Hit: ","Hit corner: ","Average: "];
