@@ -1,4 +1,4 @@
-let speed = 20;
+let speed = 16.666;
 let scale = 0.05; // Image scale (I work on 1080p monitor)
 let canvas;
 let ctx;
@@ -14,10 +14,10 @@ const display_hit = {
 };
 
 let dvd = {
-    x: (Math.random() * 575),
-    y: (Math.random() * 350),
-    xspeed: 10,
-    yspeed: 10,
+    x: (Math.random() * 600),
+    y: (Math.random() * 375),
+    xspeed: 2.5,
+    yspeed: 2.5,
     img: new Image()
 }
 
@@ -31,10 +31,10 @@ display_hit.avg.innerText = counter_desc[2] + parseFloat(0).toFixed(10);
     dvd.img.src = 'dvd-logo.png';
     //Make more randomly vector
     var decider = Math.random();
-    if (decider<0.4&&decider>0.2) {
+    if (decider<0.3) {
         dvd.xspeed *= -1;
     }
-    if (decider>0.3&&decider<0.5) {
+    if (decider>=0.2&&decider<0.5) {
         dvd.yspeed *= -1;
     }
     //Draw the "tv screen" with correct resolution 
@@ -80,9 +80,9 @@ function hitEvent(){
     var corner = false;
     //Capture hitting time
     var currentHit = Date.now();
-    display_hit.total.innerText = counter_desc[0] + (++hitCount[0]);
-    //Count as hit corner when hit 2 in 5 ms or less
-    if ((currentHit - lastHit)<=5) {
+    display_hit.total.innerText = counter_desc[0] + (hitCount[0]++);
+    //Count as hit corner when hit 2 in 100 ms or less
+    if ((currentHit - lastHit)<=100) {
         display_hit.corner.innerText = counter_desc[1] + (++hitCount[1]);
         corner = true;
     }
