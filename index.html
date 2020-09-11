@@ -5,12 +5,24 @@
             div, body, canvas {margin:0; padding: 0;}
             div.centralize {width: 100%; height: 100%; text-align: center; position: relative;}
             canvas {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-            div.counter {position: fixed; z-index: 1; background-color: gray; width: 100%; height: 30px; bottom: 0; left: 0; text-align: center; display: inline-block;}
+            div.panel, div.counter {position: fixed; z-index: 1; background-color: gray; width: 100%; display: inline-block; text-align: center; left: 0;}
+            div.panel {top: 0; height: 50px;}
+            div.panel form {transform: translateY(50%);}
+            div.counter {bottom: 0; height: 30px;}
             div.counter > div.string_container {width: 100%; top: 100%;}
-            div.counter > div.string_container p {margin: 5px 0; display: inline-block; padding: 0 10px; border: 1px solid black;}
+            div.counter > div.string_container p {margin: 3.75px 0; display: inline-block; padding: 0 10px; border: 1px solid black;}
+            input[type="text"], input[type="text"]:focus {border: none;}
         </style>
     </head>
     <body>
+        <div class="panel">
+            <form onsubmit="return false">
+                <label for="timing">Hit corner timimg condition: </label>
+                <input id="condition_time" name="timing" type="range" value="25" min="0" max="50" style="transform: translateY(2.75px);" onchange="change_timing_event(false);"/>
+                <input id="timing_display" name="ms_display" type="text" style="width: 25px; transform: translateY(-1.25px); background-color: transparent;" readonly/>
+                <label for="ms_display">ms</label>
+            </form>
+        </div>
         <div class="centralize">
             <canvas id="tv-screen"></canvas>
         </div>

@@ -4,7 +4,7 @@ let canvas;
 let ctx;
 let logoColor;
 var lastHit = Date.now()-1000; //UNIX time of the last hit
-//[0] = total hit, [1] = corner hit, [2] = Average
+//[0] = total hit, [1] = corner hit
 var hitCount = [0,0];
 const counter_desc = ["Hit: ","Hit corner: ","Average: "];
 const display_hit = {
@@ -12,6 +12,8 @@ const display_hit = {
     corner:document.getElementById("count_msg"),
     avg:document.getElementById("avg_msg")
 };
+var timing_condition = document.getElementById("condition_time");
+var display_timing = document.getElementById("timing_display");
 
 let dvd = {
     x: (Math.random() * 600),
@@ -26,6 +28,7 @@ display_hit.corner.innerText = counter_desc[1] + hitCount[1];
 display_hit.avg.innerText = counter_desc[2] + parseFloat(0).toFixed(10);
 
 (function main(){
+    change_timing_event(true);
     canvas = document.getElementById("tv-screen");
     ctx = canvas.getContext("2d");
     dvd.img.src = 'dvd-logo.png';
@@ -82,7 +85,7 @@ function hitEvent(){
     var currentHit = Date.now();
     display_hit.total.innerText = counter_desc[0] + (hitCount[0]++);
     //Count as hit corner when hit 2 in 50 ms or less
-    if ((currentHit - lastHit)<=50) {
+    if ((currentHit - lastHit)<=parseInt(timing_condition.value)) {
         display_hit.corner.innerText = counter_desc[1] + (++hitCount[1]);
         corner = true;
     }
@@ -95,4 +98,15 @@ function hitEvent(){
     b = Math.random() * (254 - 0) + 30;
 
     logoColor = 'rgb('+r+','+g+', '+b+')';
+}
+
+/**
+ * Adjust hitting corner time, and reset
+ */
+function change_timing_event(init) {
+    display_timing.setAttribute("value",timing_condition.value);
+    if (!init) {
+        hitCount = [1,0];
+        display_hit.corner.innerText = counter_desc[1] + hitCount[1];
+    }
 }
