@@ -1,1 +1,87 @@
-div, body, canvas {margin:0; padding: 0;} div.centralize {width: 100%; height: 100%; text-align: center; position:relative;} canvas {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} div.panel, div.counter {position: fixed; z-index: 1; background-color: gray; width: 100%; display: inline-block; text-align: center; left: 0;}div.panel {top: 0; height: 50px;} div.panel form {transform: translateY(50%);} div.counter {bottom: 0; height: 30px;} div.counter > div.string_container {width: 100%; top: 100%;} div.counter > div.string_container p {margin: 3.75px 0; display: inline-block; padding: 0 10px; border: 1px solid black;} input[type="text"], input[type="text"]:focus {border: none;} input[type="range"] {-webkit-appearance: none; width: 100px; height:10px; outlone: none; opacity: 0.75; background: #ffffff; transition: opacity 100ms;} input[type="range"]:hover {opacity: 1;} input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 10px; height: 10px; background: #33ff33; cursor: pointer;} input[type="range"]::-moz-range-thumb {width: 10px; height: 10px; background: #33ff33; cursor: pointer;}
+div, body, canvas {
+	margin:0; padding: 0;
+}
+
+div.centralize {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position:relative;
+}
+
+canvas {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+div.panel, div.counter {
+	position: fixed;
+	z-index: 1;
+	background-color: gray;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	left: 0;
+}
+
+div.panel {
+	top: 0;
+	height: 50px;
+}
+
+div.panel form {
+	transform: translateY(50%);
+}
+
+div.counter {
+	bottom: 0;
+	height: 30px;
+}
+
+div.counter > div.string_container {
+	width: 100%;
+	top: 100%;
+}
+
+div.counter > div.string_container p {
+	margin: 3.75px 0;
+	display: inline-block;
+	padding: 0 10px;
+	border: 1px solid black;
+}
+
+input[type="text"], input[type="text"]:focus {
+	border: none;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 100px;
+	height:10px;
+	outlone: none;
+	opacity: 0.75;
+	background: #ffffff;
+	transition: opacity 100ms;
+}
+
+input[type="range"]:hover {
+	opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 10px;
+	height: 10px;
+	background: #33ff33;
+	cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 10px;
+	height: 10px;
+	background: #33ff33;
+	cursor: pointer;
+}
