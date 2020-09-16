@@ -1,0 +1,1 @@
+const head=document.getElementsByTagName("head")[0];const body=document.getElementsByTagName("body")[0];var css=document.createElement("link");css.setAttribute("rel","stylesheet");css.setAttribute("href","style/ui.css");head.appendChild(css);var anim=document.createElement("script");anim.setAttribute("src","js/app.js");body.appendChild(anim);
