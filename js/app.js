@@ -37,7 +37,7 @@ function hitEvent(){
     var corner = false;
     //Capture hitting time
     var currentHit = Date.now();
-    display_hit.total.innerText = counter_desc[0] + (hitCount[0]++);
+    display_hit.total.innerText = counter_desc[0] + (++hitCount[0]);
     //Count as hit corner when hit 2 in 50 ms or less
     if ((currentHit - lastHit)<=parseInt(timing_condition.value)) {
         display_hit.corner.innerText = counter_desc[1] + (++hitCount[1]);
@@ -47,11 +47,7 @@ function hitEvent(){
     display_hit.avg.innerText = counter_desc[2] + parseFloat(hitCount[1]/hitCount[0]).toFixed(10);
     console.log({msg:"Hit!",isCorner:corner,timeUsed:((currentHit-lastHit)/1000)+'s'});
     lastHit = currentHit;
-    r = Math.random() * (254 - 0) + 30;
-    g = Math.random() * (254 - 0) + 30;
-    b = Math.random() * (254 - 0) + 30;
-
-    logoColor = 'rgb('+r+','+g+', '+b+')';
+    setColour();
 }
 
 /**
@@ -64,6 +60,17 @@ function change_timing_event(init) {
         display_hit.total.innerHTML = counter_desc[0] + "Timing has been reset";
         display_hit.corner.innerText = counter_desc[1] + hitCount[1];
     }
+}
+
+/**
+ * Set colour
+ */
+function setColour() {
+    r = Math.random() * (254 - 0) + 30;
+    g = Math.random() * (254 - 0) + 30;
+    b = Math.random() * (254 - 0) + 30;
+
+    logoColor = 'rgb('+r+','+g+', '+b+')';
 }
 
 const speed = 16.666;
@@ -107,5 +114,5 @@ if (decider>=0.2&&decider<0.5) {
 //Draw the "tv screen" with correct resolution 
 canvas.width  = 720;
 canvas.height = 480;
-hitEvent();
+setColour();
 update();
