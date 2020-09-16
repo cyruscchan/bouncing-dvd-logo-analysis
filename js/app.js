@@ -1,6 +1,3 @@
-/**
- * Set next frame which dvd logo moved
- */
 function update() {
     setTimeout(() => {
         //Draw the canvas background
