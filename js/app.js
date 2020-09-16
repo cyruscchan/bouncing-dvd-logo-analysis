@@ -60,7 +60,7 @@ function hitEvent(){
 function change_timing_event(init) {
     display_timing.setAttribute("value",timing_condition.value);
     if (!init) {
-        hitCount = [1,0];
+        hitCount = [0,0];
         display_hit.total.innerHTML = counter_desc[0] + "Timing has been reset";
         display_hit.corner.innerText = counter_desc[1] + hitCount[1];
     }
