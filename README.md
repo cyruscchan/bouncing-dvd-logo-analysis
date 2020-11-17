@@ -4,6 +4,6 @@
 
 So, I want to know the chance of this happened
 
-[Click me to view](https://cyruscchan.github.io/bouncing-dvd-logo-analysis/)
+[Click me to view](https://rk0cc.github.io/bouncing-dvd-logo-analysis/)
 
 
