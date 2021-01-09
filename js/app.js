@@ -45,7 +45,7 @@ function hitEvent(){
     }
     //Calculate avarage chance
     display_hit.avg.innerText = counter_desc[2] + parseFloat(hitCount[1]/hitCount[0]).toFixed(10);
-    console.log({msg:"Hit!",isCorner:corner,timeUsed:((currentHit-lastHit)/1000)+'s'});
+    console.log({Hit:{isCorner:corner,timeUsed:((currentHit-lastHit)/1000)+'s'}});
     lastHit = currentHit;
     setColour();
 }
